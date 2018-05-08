@@ -82,11 +82,13 @@ class Player {
         if(this.y >= 405) {this.y = 405;}
         if(this.y < 0) {this.score += 1;}
 
-
-
-
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
+const allEnemies = [
+    enemy1 = new Enemy(60, 60);
+    enemy2 = new Enemy(150, 145);
+    enemy3 = new Enemy(300, 230); 
+];
 // Place the player object in a variable called player
 
 
