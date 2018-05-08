@@ -60,7 +60,27 @@ class Player {
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
-}
+    handleInput(arrow) {
+        this.lives === 0 ? this.gameOver = true : this.gameOver = false;
+        if(this.gameOver) {return};
+        swith(arrow) {
+            case 'up':
+                this.y -= 85;
+                break;
+            case 'down':
+                this.y += 85;
+                break;
+            case 'left':
+                this.x -= 100;
+                break;
+            case 'right'
+                this.x += 100;
+        }
+        // fix the player in the canvas
+        if(this.x <= 2) {this.x = 2;}
+        if(this.x >= 400) {this.x = 400;}
+        if(this.y >= 405) {this.y = 405;}
+        if(this.y < 0) {this.score += 1;}
 
 
 
