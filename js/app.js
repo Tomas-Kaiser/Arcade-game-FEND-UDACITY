@@ -46,9 +46,16 @@ class Player {
         this.score = 0;
         this.sprite = 'images/char-boy.png';
         this.gameOver = false;
-        this.pausKey = false;
     }
-
+    update() {
+        // Once the player hits water, get back him to start line
+        if (this.y < 0) {
+            setTimeout(() => {
+                this.x = 202;
+                this.y = 405;
+            }, 2000);
+        }
+    }
 }
 
 
