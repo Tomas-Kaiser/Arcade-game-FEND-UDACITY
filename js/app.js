@@ -22,6 +22,12 @@ class Enemy {
     if (this.x > 550) {
         this.x -150;
         }
+    // Collison with enemy
+    if (Math.abs(this.x - player.x) < 75 && Math.abs(this.y - player.y) < 78) {
+        player.x = 202;
+        player.y = 405;
+        player.lives -= 1;
+    }
     }
     // Draw the enemy on the screen, required method for game
     render() {
@@ -29,11 +35,11 @@ class Enemy {
     }
 }
 
-
-
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+
+
 
 
 // Now instantiate your objects.
