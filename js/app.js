@@ -11,16 +11,20 @@ class Enemy {
         this.speed = getRandomInt(80, 250);
         this.sprite = 'images/enemy-bug.png';
     }
-}
 
-
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
+    // Update the enemy's position, required method for game
+    // Parameter: dt, a time delta between ticks
+    update(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-};
+    this.x += this.speed * dt;
+    if (this.x > 550) {
+        this.x -150;
+        }
+    }
+}
+
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
