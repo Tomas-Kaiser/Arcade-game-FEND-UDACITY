@@ -38,6 +38,18 @@ class Enemy {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+class Player {
+    constractor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.lives = 3;
+        this.score = 0;
+        this.sprite = 'images/char-boy.png';
+        this.gameOver = false;
+        this.pausKey = false;
+    }
+
+}
 
 
 
