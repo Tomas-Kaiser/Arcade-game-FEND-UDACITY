@@ -63,7 +63,7 @@ class Player {
     handleInput(arrow) {
         this.lives === 0 ? this.gameOver = true : this.gameOver = false;
         if(this.gameOver) {return};
-        swith(arrow) {
+        switch(arrow) {
             case 'up':
                 this.y -= 85;
                 break;
@@ -73,21 +73,24 @@ class Player {
             case 'left':
                 this.x -= 100;
                 break;
-            case 'right'
+            case 'right':
                 this.x += 100;
-        }
+        };
         // fix the player in the canvas
         if(this.x <= 2) {this.x = 2;}
         if(this.x >= 400) {this.x = 400;}
         if(this.y >= 405) {this.y = 405;}
         if(this.y < 0) {this.score += 1;}
+        }
+    }
+    
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [
-    enemy1 = new Enemy(60, 60),
-    enemy2 = new Enemy(150, 145),
-    enemy3 = new Enemy(300, 230)
+    enemy1 = new Enemy(10, 60),
+    enemy2 = new Enemy(135, 145),
+    enemy3 = new Enemy(350, 230)
 ];
 // Place the player object in a variable called player
 const player = new Player(202, 405);
@@ -111,5 +114,5 @@ document.addEventListener('keyup', function(e) {
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+    return Math.floor(Math.random() * (max - min)) + min; // The maximum is exclusive and the minimum is inclusive
 }
