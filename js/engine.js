@@ -141,6 +141,7 @@ var Engine = (function(global) {
         renderEntities();
         score();
         lives();
+        loose();
 
     }
 
@@ -159,6 +160,27 @@ var Engine = (function(global) {
         ctx.fillText('Remaining lives:', 90, 40);
         ctx.fillText(player.lives, 185, 40);
     } 
+
+    function loose() {
+        if(player.lives === 0) {
+            player.gameOver = true;
+            ctx.font = "bold 80px Arial";
+            ctx.fillStyle = "red";
+            ctx.textAlign = "center";
+            ctx.fillText("GAME OVER", 250, 250);
+            ctx.font = "bold 20px Arial";
+            ctx.fillStyle = "black";
+            ctx.textAlign = "center";
+            ctx.fillText("PRESS SPACE BAR TO PLAY AGAIN", 250, 350);
+            document.addEventListener('keyup', function (e) {
+                if (e.keyCode == "32") {
+                    player.lives = 3;
+                    player.score = 0;
+                    player.gameOver = false;
+                }
+            })
+        }
+    }
 
     /* This function is called by the render function and is called on each game
      * tick. Its purpose is to then call the render functions you have defined
