@@ -20,14 +20,14 @@ class Enemy {
     // all computers.
     this.x += this.speed * dt;
     if (this.x > 550) {
-        this.x -150;
+        this.x -100;
         }
     // Collison with enemy
     if (Math.abs(this.x - player.x) < 75 && Math.abs(this.y - player.y) < 78) {
         player.x = 202;
         player.y = 405;
         player.lives -= 1;
-    }
+        }   
     }
     // Draw the enemy on the screen, required method for game
     render() {
@@ -39,13 +39,14 @@ class Enemy {
 // This class requires an update(), render() and
 // a handleInput() method.
 class Player {
-    constractor(x, y) {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
         this.lives = 3;
         this.score = 0;
         this.sprite = 'images/char-boy.png';
         this.gameOver = false;
+
     }
     update() {
         // Once the player hits water, get back him to start line
@@ -60,10 +61,10 @@ class Player {
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
-    handleInput(arrow) {
+    handleInput(key) {
         this.lives === 0 ? this.gameOver = true : this.gameOver = false;
-        if(this.gameOver) {return};
-        switch(arrow) {
+        if(player.gameOver) return;
+        switch(key) {
             case 'up':
                 this.y -= 85;
                 break;

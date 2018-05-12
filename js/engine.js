@@ -183,3 +183,23 @@ var Engine = (function(global) {
      */
     global.ctx = ctx;
 })(this);
+
+/*
+here is what I did to have a modal popup at game start
+ startMenu() {
+   ctx.fillText('Hit space to start a new game',252,230);
+   ctx.fillText('Esc pause/resume game',252,265);
+   ctx.fillText('Use + key to set game difficulty',252,300);
+   ctx.fillStyle = this.levels[this.level];
+   ctx.arc(250,350,20,0,2*Math.PI);
+   ctx.fill();
+   ctx.lineWidth = 5;
+   ctx.strokeStyle='black';
+   ctx.fillStyle = 'white';
+   ctx.stroke();
+   ctx.fillText('Choose player with Enter key',252,430);
+   ctx.strokeStyle = 'red';
+   ctx.lineJoin = 'round';
+   ctx.strokeRect(205,448,96,100);
+   ctx.drawImage(Resources.get(player.sprite), 205, 395);
+ }*/
