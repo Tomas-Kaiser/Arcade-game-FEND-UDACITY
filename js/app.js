@@ -20,7 +20,7 @@ class Enemy {
     // all computers.
     this.x += this.speed * dt;
     if (this.x > 550) {
-        this.x -100;
+        this.x = -100;
         }
     // Collison with enemy
     if (Math.abs(this.x - player.x) < 75 && Math.abs(this.y - player.y) < 78) {
@@ -50,11 +50,11 @@ class Player {
     }
     update() {
         // Once the player hits water, get back him to start line
-        if (this.y < 0) {
+        if (this.y < 75) {
             setTimeout(() => {
                 this.x = 202;
                 this.y = 405;
-            }, 2000);
+            }, 1000);
         }
     }
     // Draw the player on the screen
