@@ -46,15 +46,20 @@ class Player {
         this.score = 0;
         this.sprite = 'images/char-boy.png';
         this.gameOver = false;
+        this.stopKey = false;
 
     }
     update() {
         // Once the player hits water, get back him to start line
-        if (this.y < 75) {
+        if (this.y < 0) {
+            this.stopKey = true;
+            setTimeout(() => {
+                this.stopKey = false;
+            }, 800);
             setTimeout(() => {
                 this.x = 202;
                 this.y = 405;
-            }, 1000);
+            }, 400);
         }
     }
     // Draw the player on the screen
@@ -63,7 +68,7 @@ class Player {
     }
     handleInput(key) {
         this.lives === 0 ? this.gameOver = true : this.gameOver = false;
-        if(player.gameOver) return;
+        if(player.gameOver || player.stopKey) return;
         switch(key) {
             case 'up':
                 this.y -= 85;
@@ -80,8 +85,10 @@ class Player {
         // fix the player in the canvas
         if(this.x <= 2) {this.x = 2;}
         if(this.x >= 400) {this.x = 400;}
-        if(this.y >= 405) {this.y = 405;}
-        if(this.y < 0) {this.score += 1;}
+        if(this.y >= 405 || this.y <= -85) {this.y = 405;}
+        if(this.y < 0) {
+            this.score += 1;
+                }
         }
     }
     
