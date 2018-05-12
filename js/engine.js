@@ -137,9 +137,28 @@ var Engine = (function(global) {
                 ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
             }
         }
-
+        
         renderEntities();
+        score();
+        lives();
+
     }
+
+    function score () {
+        ctx.font = 'bold 20px Arial';
+        ctx.fillStyle = 'black';
+        ctx.fillText('SCORE:', 390, 40);
+        ctx.fillText(player.score, 450, 40);
+    }
+
+    function lives() {
+        
+        ctx.font = 'bold 20px Arial';
+        ctx.fillStyle = 'red';
+        ctx.textAlign = 'center';
+        ctx.fillText('Remaining lives:', 90, 40);
+        ctx.fillText(player.lives, 185, 40);
+    } 
 
     /* This function is called by the render function and is called on each game
      * tick. Its purpose is to then call the render functions you have defined
