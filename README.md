@@ -5,5 +5,11 @@ Students should use this [rubric](https://review.udacity.com/#!/projects/2696458
 
 For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
 
-## Play game
+## Instructions
 Find the link here: https://tomas-kaiser.github.io/frontend-nanodegree-arcade-game/
+
+## How I built the arcade game
+I used JavaScript ES06
+
+## Contributing
+This repository is for FEND program at UDACITY. Therefore, I will not accept any pull requests.
