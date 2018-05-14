@@ -4,7 +4,7 @@ frontend-nanodegree-arcade-game
 ## Instructions
 Find the link here: https://tomas-kaiser.github.io/frontend-nanodegree-arcade-game/
 
-You have to cross the road into water. Once you reach the water, the score is increased by one. Use arrows on your keyboard for moving the player. You have only 3 lives. Avoid to collition with insect :).
+You have to cross the road into water. Once you reach the water, the score is increased by one. Use arrows on your keyboard for moving the player. You have only 3 lives. Avoid to collision with insect :).
 
 Enjoy the game!
 
